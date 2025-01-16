@@ -28,6 +28,8 @@ function Registration() {
                 <br />
                 <br />
                 <button>Sign Up</button>
+                <button>Log in</button>
+
             </div>
         </div>
     )
