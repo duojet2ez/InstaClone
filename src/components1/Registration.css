@@ -1,0 +1,37 @@
+button {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1877f2;
+}
+
+
+.registration-container {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.registration-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+}
