@@ -12,3 +12,54 @@
   z-index: 1000;
 }
 
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+  padding-left: 550px;
+
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  width: 200px;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: #e8e8e8;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #262626;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.2s ease;
+}
+
+.nav-button:hover {
+  color: #000;
+}
