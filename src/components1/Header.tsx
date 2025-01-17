@@ -1,5 +1,9 @@
 import './Header.css'
 
+interface HeaderProps{
+    isLoggedIn: boolean;
+}
+
 function Navbar(){
     return(
         <div>
@@ -17,12 +21,13 @@ function Navbar(){
     )
 }
 
-function Header() {
+function Header({isLoggedIn} : HeaderProps) {
+    console.log(isLoggedIn)
     return (
         <>
             <div className="header">
                 <h1 className="logo">Instagram</h1>
-                <Navbar />
+                {isLoggedIn && <Navbar />}
             </div>
         </>
     )
