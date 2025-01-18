@@ -22,7 +22,6 @@ function Navbar(){
 }
 
 function Header({isLoggedIn} : HeaderProps) {
-    console.log(isLoggedIn)
     return (
         <>
             <div className="header">
