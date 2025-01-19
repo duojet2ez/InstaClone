@@ -1,7 +1,7 @@
-import Header from './components1/Header.tsx'
-import Registration from './components1/Registration.tsx'
-import Login from './components1/Login.tsx'
-import ActivityFeed from './components1/Activity-Feed.tsx'
+import Header from './components/Header/Header.tsx'
+import Registration from './components/Registration/Registration.tsx'
+import Login from './components/Login/Login.tsx'
+import ActivityFeed from './components/ActivityFeed/ActivityFeed.tsx'
 import { useState } from 'react';
 
 const loginStatus:boolean = true;
