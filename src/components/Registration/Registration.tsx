@@ -1,5 +1,7 @@
 import './Registration.css'
 
+
+
 interface PageProps{
     setCurrentPage: any;
 }
