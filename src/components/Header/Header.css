@@ -52,6 +52,7 @@
 
 .nav-button {
   background: none;
+  font-weight: bold;
   border: none;
   font-size: 14px;
   color: #262626;
@@ -63,3 +64,23 @@
 .nav-button:hover {
   color: #000;
 }
+
+button:hover {
+  background-color: #1877f2;
+}
+
+button {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+
+

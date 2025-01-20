@@ -13,7 +13,6 @@ function App() {
         <Header isLoggedIn = {loginStatus} />
         {/* {currentPage === 'registration' && <Registration setCurrentPage = {setCurrentPage} />} */}
         {/* {currentPage === 'login' && <Login setCurrentPage = {setCurrentPage}/>} */}
-        {/* {currentPage === 'activity-feed' && <ActivityFeed />} */}
         {/* <ActivityFeed /> */}
         <CreatePost />
     </>
