@@ -26,4 +26,17 @@
     border: 2px solid #ccc;
     border-radius: 8px;
     margin-left: 60px;
+    background-color: rgb(202, 199, 199);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .innerText{
+    font-size: larger;
+    background-color: rgb(202, 199, 199);
+  }
+
+  .postButton{
+    margin-left: 110px;
   }
