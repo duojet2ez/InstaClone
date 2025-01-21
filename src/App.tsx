@@ -4,6 +4,7 @@ import Login from './components/Login/Login.tsx'
 import ActivityFeed from './components/ActivityFeed/ActivityFeed.tsx'
 import CreatePost from './components/CreatePost/CreatePost.tsx'
 import FollowedUser from './components/FollowedUser/FollowedUser.tsx'
+import SearchedUser from './components/SearchedUser/SearchedUser.tsx'
 import { useState } from 'react';
 
 const loginStatus:boolean = true;
@@ -16,7 +17,8 @@ function App() {
         {/* {currentPage === 'login' && <Login setCurrentPage = {setCurrentPage}/>} */}
         {/* <ActivityFeed /> */}
         {/* <CreatePost /> */}
-        <FollowedUser />
+        {/* <FollowedUser /> */}
+        <SearchedUser />
     </>
     )
 }

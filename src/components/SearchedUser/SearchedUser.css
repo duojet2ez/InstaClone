@@ -9,3 +9,82 @@
     max-width: 400px;
     padding: 20px;
 }
+
+
+.profileContainer{
+    display: flex;
+    align-items: flex-start;  /* This will vertically align items */
+    gap: 50px;  /* This adds space between the circle and the new element */
+}
+.profileCircle{
+    width: 100px;
+    height: 100px;
+    border: 3px solid #000000;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.userName{
+    display: flex;
+    flex-direction: column;
+    font-size:x-large;
+    font-weight: bold;
+}
+
+.userName p{
+    margin: 0;
+}
+
+.followers{
+    font-size: medium;
+    margin-top: 20px;
+    font-weight: 300
+
+}
+
+.following{
+    font-size: medium;
+    font-weight: 300;
+}
+
+.followButton{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 20x;  /* Reduced height */
+    border: 1px solid;
+    padding: 0 8px;  /* Minimal padding */
+    background-color: rgb(206, 206, 206);
+
+}
+
+.followButtonText{
+    font-size: medium;
+    margin-top: 5px;
+    font-weight: 300
+
+}
+
+.privateMessage{
+    margin-top:200px;
+    font-size: large;
+    font-weight: 600;
+}
+.privateMessage2{
+    margin-top:10px;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.privateMessage, .privateMessage2 {
+    text-align: center;
+}
+
+hr {
+    width: 50%;  /* or any width you prefer */
+    margin: 0 auto;  /* top/bottom: 0, left/right: auto */
+    border: none;
+    border-top: 1px solid #000;  /* or any color you want */
+  }
