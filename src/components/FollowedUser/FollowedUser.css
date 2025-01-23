@@ -1,0 +1,81 @@
+.followedUserContainer {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.followedUserPage {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.profileContainer{
+    display: flex;
+    align-items: flex-start;  /* This will vertically align items */
+    gap: 50px;  /* This adds space between the circle and the new element */
+}
+.profileCircle{
+    width: 100px;
+    height: 100px;
+    border: 3px solid #000000;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.userName{
+    display: flex;
+    flex-direction: column;
+    font-size:x-large;
+    font-weight: bold;
+}
+
+.userName p{
+    margin: 0;
+}
+
+.followers{
+    font-size: medium;
+    margin-top: 20px;
+    font-weight: 300
+
+}
+
+.following{
+    font-size: medium;
+    font-weight: 300;
+}
+
+.posts{
+    margin-top:200px;
+    font-size: large;
+    font-weight: 300;
+}
+
+hr {
+    width: 50%;  /* or any width you prefer */
+    margin: 0 auto;  /* top/bottom: 0, left/right: auto */
+    border: none;
+    border-top: 1px solid #000;  /* or any color you want */
+  }
+
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    /* border-top: 1px solid #000;  Line is now part of container */
+    padding-top: 20px;  /* Space between line and grid */
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;  /* Grid takes full width of container */
+  }
+  
+  .box {
+    aspect-ratio: 1;
+    background-color: #ddd;
+    border: 1px solid #000;
+  }
