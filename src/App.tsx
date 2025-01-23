@@ -10,17 +10,17 @@ import { useState } from 'react';
 
 const loginStatus:boolean = true;
 function App() {
-    const [currentPage, setCurrentPage] = useState('login'); 
+    const [currentPage, setCurrentPage] = useState('profile'); 
   return (
     <>
         <Header isLoggedIn = {loginStatus} />
-        {/* {currentPage === 'registration' && <Registration setCurrentPage = {setCurrentPage} />} */}
-        {/* {currentPage === 'login' && <Login setCurrentPage = {setCurrentPage}/>} */}
+        {currentPage === 'registration' && <Registration setCurrentPage = {setCurrentPage} />}
+        {currentPage === 'login' && <Login setCurrentPage = {setCurrentPage}/>}
         {/* <ActivityFeed /> */}
         {/* <CreatePost /> */}
         {/* <FollowedUser /> */}
         {/* <SearchedUser /> */}
-         {/* <Profile /> */}
+         {currentPage === 'profile' && <Profile />}
     </>
     )
 }
@@ -30,3 +30,7 @@ export default App
 
 
 // consider using enums for page checking
+
+
+//also use app to create new component that holds universal css settings for all pages and html
+//finish hardcoding simulate fetch request for profile page and activity feed

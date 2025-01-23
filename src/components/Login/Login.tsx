@@ -10,6 +10,7 @@ export default function Login({setCurrentPage}: PageProps){
     function handleLogin(){
         //make a post request to node with the username and password for verification
         console.log(`attempted username login: ${username}, attempted password: ${password}`);
+        
     }
     return(
         <>
