@@ -2,14 +2,24 @@ import { useEffect, useState } from 'react'
 import './Profile.css'
 import getUserByUsername from '../../api/endpoints'
 
+interface User{
+  username: string;
+  followerCount: number;
+  followingCount: number;
+  profilePicture: string;
+  posts: {
+    img: string;
+    id: number;
+  }[]; 
+}
 
 function Profile() {
-  const [username, setUsername] = useState(''); 
+  const [user, setUser] = useState<User>({} as User); 
   useEffect(() =>{
     async function fetchData(){
-      const user = await getUserByUsername('adfads');
+      const user = await getUserByUsername('Eric');
       console.log(user);  
-      setUsername(user.username);
+      setUser(user);
     }
     fetchData();
   }, [])
@@ -20,10 +30,12 @@ function Profile() {
     <div className="profileContainer">
         <div className="profilePage">
         <div className="profileContainer">
-            <div className="profileCircle"></div>
-            <div className="userName">{username}
-              <div className="followers">10 Followers</div>
-              <div className="following">4 Following</div>
+            <div className="profileCircle">
+              <img src={user.profilePicture} alt="Profile"/>
+            </div>
+            <div className="userName">{user.username}
+              <div className="followers">{user.followerCount} Followers</div>
+              <div className="following">{user.followingCount} Following</div>
               <div className="posts">My Posts</div>
             </div>
           </div>
@@ -32,9 +44,15 @@ function Profile() {
     <hr />
     <div className="container">
       <div className="grid">
-        <div className="box"></div>
-        <div className="box"></div>
-        <div className="box"></div>
+        <div className="box">
+          <img src={user.posts[0].img} alt="Post"/>
+        </div>
+        <div className="box">
+          <img src={user.posts[1].img} alt="Post"/>
+        </div>
+        <div className="box">
+          <img src={user.posts[2].img} alt="Post"/>
+        </div>
         <div className="box"></div>
         <div className="box"></div>
         <div className="box"></div>

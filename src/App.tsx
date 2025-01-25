@@ -14,13 +14,13 @@ function App() {
   return (
     <>
         <Header isLoggedIn = {loginStatus} />
-        {currentPage === 'registration' && <Registration setCurrentPage = {setCurrentPage} />}
-        {currentPage === 'login' && <Login setCurrentPage = {setCurrentPage}/>}
-        {/* <ActivityFeed /> */}
+        {/* {currentPage === 'registration' && <Registration setCurrentPage = {setCurrentPage} />} */}
+        {/* {currentPage === 'login' && <Login setCurrentPage = {setCurrentPage}/>} */}
+        <ActivityFeed />
         {/* <CreatePost /> */}
         {/* <FollowedUser /> */}
         {/* <SearchedUser /> */}
-         {currentPage === 'profile' && <Profile />}
+         {/* {currentPage === 'profile' && <Profile />} */}
     </>
     )
 }
