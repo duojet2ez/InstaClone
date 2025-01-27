@@ -5,13 +5,13 @@ export default function ActivityFeed(){
         <>
             <div className="feedContainer">
                 <div className="feedPage">
-                    <h1>Title Here</h1>
+                    <h1>Username</h1>
                     <div className="pictureBox"></div>                    
                     <p>Caption here</p>
-                    <h1>Title Here</h1>
+                    <h1>Username</h1>
                     <div className="pictureBox"></div>                    
                     <p>Caption here</p>
-                    <h1>Title Here</h1>
+                    <h1>Username</h1>
                     <div className="pictureBox"></div>                    
                     <p>Caption here</p>
                 </div>
