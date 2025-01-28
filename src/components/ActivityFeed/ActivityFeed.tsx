@@ -1,6 +1,25 @@
 import './ActivityFeed.css'
+import getFeedData from '../../api/endpoints'
+import { useEffect, useState } from 'react'
+
+interface FeedItem{
+    username: string;
+    img: string;
+    caption: string;
+}
+
 
 export default function ActivityFeed(){
+    const [feedItems, setFeedItems] = useState<FeedItem[]>([]);
+
+    useEffect(() => {
+        async function fetchData(){
+            const activityData = await getFeedData('ericFeed')
+            console.log(activityData); 
+        }
+        fetchData();
+    },[])
+
     return(
         <>
             <div className="feedContainer">

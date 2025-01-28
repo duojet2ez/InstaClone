@@ -49,7 +49,7 @@ interface FeedItem{
     caption: string;
 }
 // will return an array of objects containing all feed data maybe can come from a followers list.. [{username, img, caption}]
-export async function feedData(feed:string):Promise<FeedItem[]>{
+export async function getFeedData(feed:string):Promise<FeedItem[]>{
         // const response = await fetch(`${root}/profile/:${feed}`);
     // if(!response.ok){
     //     console.log('error fetching feed', response.status);

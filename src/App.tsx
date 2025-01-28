@@ -33,4 +33,3 @@ export default App
 
 
 //also use app to create new component that holds universal css settings for all pages and html
-//finish hardcoding simulate fetch request for profile page and activity feed
