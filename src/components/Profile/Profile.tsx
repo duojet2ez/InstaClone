@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Profile.css'
-import getUserByUsername from '../../api/endpoints'
+import { getUserByUsername } from '../../api/endpoints';
 
 interface User{
   username: string;
