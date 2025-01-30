@@ -9,6 +9,17 @@ interface FeedItem{
     id:number;
 }
 
+function ActivityFeedItem(props:FeedItem){
+    return(
+        <>
+
+                <h1>{props.username}</h1>
+                <div className="pictureBox"></div>                    
+                <p>Caption here</p>
+
+        </>
+    )
+}
 
 export default function ActivityFeed(){
     const [feedItems, setFeedItems] = useState<FeedItem[]>([]);
@@ -27,14 +38,17 @@ export default function ActivityFeed(){
     return(
         <>
             <div className="feedContainer">
-            
-
-
-            {
-                feedItems.map((item) => {
-                    return <h1 key={item.id}>{item.username}</h1>
-                })
-            }
+                <div className="feedPage">
+                {
+                    feedItems.map((item) => {
+                        return <ActivityFeedItem 
+                                    username={item.username} 
+                                    img={item.img}
+                                    caption={item.caption}
+                                    id={item.id}
+                                        />
+                    })
+                }
             {/* <div className="feedPage">
                     <h1>{feedItems.length > 0 && feedItems[0].username}</h1>
                     <div className="pictureBox"></div>                    
@@ -46,11 +60,12 @@ export default function ActivityFeed(){
                     <div className="pictureBox"></div>                    
                     <p>Caption here</p>
                 </div> */}
+                </div>
             </div>
         </>
     )
 }
 
-
+// return <h1 key={item.id}>{item.username}</h1>
 
 //use the map function to map to a react component
