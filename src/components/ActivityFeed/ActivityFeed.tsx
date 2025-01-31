@@ -14,8 +14,10 @@ function ActivityFeedItem(props:FeedItem){
         <>
 
                 <h1>{props.username}</h1>
-                <div className="pictureBox"></div>                    
-                <p>Caption here</p>
+                <div className="pictureBox">
+                    <img src={props.img} alt="kewl" />
+                </div>                    
+                <p>{props.caption}</p>
 
         </>
     )
@@ -49,23 +51,8 @@ export default function ActivityFeed(){
                                         />
                     })
                 }
-            {/* <div className="feedPage">
-                    <h1>{feedItems.length > 0 && feedItems[0].username}</h1>
-                    <div className="pictureBox"></div>                    
-                    <p>Caption here</p>
-                    <h1>Username</h1>
-                    <div className="pictureBox"></div>                    
-                    <p>Caption here</p>
-                    <h1>Username</h1>
-                    <div className="pictureBox"></div>                    
-                    <p>Caption here</p>
-                </div> */}
                 </div>
             </div>
         </>
     )
 }
-
-// return <h1 key={item.id}>{item.username}</h1>
-
-//use the map function to map to a react component
