@@ -1,13 +1,22 @@
+ 
+
 
 const root = 'http://localhost:8000'
+
+export interface Post{
+    img:string;
+    id:number;
+  }
+  
 
 interface UserProfile{
     username:string;
     followingCount: number;
     followerCount: number;
     profilePicture: string;
-    posts:Array<{img:string, id:number}>
+    posts:Post[]; 
 }
+
 
 //function takes in a username and returns a json with username->folowers->post list etc 
 export async function getUserByUsername(username:string):Promise<UserProfile>{

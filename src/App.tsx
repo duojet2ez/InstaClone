@@ -20,7 +20,10 @@ function App() {
         {/* <CreatePost /> */}
         {/* <FollowedUser /> */}
         {/* <SearchedUser /> */}
-         {/* {currentPage === 'profile' && <Profile />} */}
+         {/* {currentPage === 'profile' && <Profile 
+                                                profileUsername={"joe"}
+                                                loggedInUsername={"joe"}
+                                                />} */}
     </>
     )
 }

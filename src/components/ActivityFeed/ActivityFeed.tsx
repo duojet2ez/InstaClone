@@ -27,15 +27,13 @@ export default function ActivityFeed(){
     const [feedItems, setFeedItems] = useState<FeedItem[]>([]);
 
     useEffect(() => {
-        async function fetchData(){
+
+        //function gets fedData from endpoint and uses that data to set the state calling setFeedItems
+        async function setStateWithDataFromEndpoint(){
             const activityData = await getFeedData('ericFeed')
-             return activityData; 
+            setFeedItems(activityData); 
         }
-        async function getPromiseData(){
-            const returnedPromise= await fetchData();
-            setFeedItems(returnedPromise); 
-        }
-        getPromiseData(); 
+        setStateWithDataFromEndpoint(); 
     },[])
     return(
         <>

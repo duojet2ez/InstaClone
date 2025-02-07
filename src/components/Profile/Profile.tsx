@@ -1,40 +1,51 @@
 import { useEffect, useState } from 'react'
 import './Profile.css'
-import { getUserByUsername } from '../../api/endpoints';
+import { getUserByUsername, Post } from '../../api/endpoints';
 
-interface User{
-  username: string;
-  followerCount: number;
-  followingCount: number;
-  profilePicture: string;
-  posts: {
-    img: string;
-    id: number;
-  }[]; 
+
+
+function PostItem(props:Post){
+  return(
+    <div className="box">
+    <img src={props.img} alt="Post"/>
+  </div>
+  )
 }
 
-function Profile() {
-  const [user, setUser] = useState<User>({} as User); 
+
+//probably should make individual states for User don't set object in state
+//why didn't make isLoggedInUsersProfile a state? think about that and try making it a state
+//login page stuff 
+function Profile({profileUsername, loggedInUsername}) {
+  const [username, setUsername] = useState(''); 
+  const [followingCount, setFollowingCount] = useState(0); 
+  const [followerCount, setFollowerCount] = useState(0); 
+  const [profilePicture, setProfilePicture] = useState(''); 
+  const [postData, setPostData] = useState<Post[]>([]);  
   useEffect(() =>{
     async function fetchData(){
-      const user = await getUserByUsername('Eric');
-      setUser(user);
+      const user = await getUserByUsername(profileUsername);
+      setUsername(user.username);
+      setFollowingCount(user.followingCount);
+      setFollowerCount(user.followerCount);
+      setProfilePicture(user.profilePicture);
+      setPostData(user.posts); 
     }
     fetchData();
-  }, [])
+  }, [profileUsername])
 
-
+  const isLoggedInUsersProfile:boolean = profileUsername === loggedInUsername;
   return (
     <>
     <div className="profileContainer">
         <div className="profilePage">
         <div className="profileContainer">
             <div className="profileCircle">
-              <img src={user.profilePicture} alt="Profile"/>
+              <img src={profilePicture} alt="Profile"/>
             </div>
-            <div className="userName">{user.username}
-              <div className="followers">{user.followerCount} Followers</div>
-              <div className="following">{user.followingCount} Following</div>
+            <div className="userName">{username}
+              <div className="followers">{followerCount} Followers</div>
+              <div className="following">{followingCount} Following</div> <div>{isLoggedInUsersProfile && "edit"}</div>
               <div className="posts">My Posts</div>
             </div>
           </div>
@@ -43,21 +54,12 @@ function Profile() {
     <hr />
     <div className="container">
       <div className="grid">
-        <div className="box">
-          <img src={user.posts[0].img} alt="Post"/>
-        </div>
-        <div className="box">
-          <img src={user.posts[1].img} alt="Post"/>
-        </div>
-        <div className="box">
-          <img src={user.posts[2].img} alt="Post"/>
-        </div>
-        <div className="box"></div>
-        <div className="box"></div>
-        <div className="box"></div>
-        <div className="box"></div>
-        <div className="box"></div>
-        <div className="box"></div>
+        {postData.map((p) => {
+          return <PostItem 
+                    img={p.img}  
+                    id={p.id}
+                    /> 
+        })}
     </div>
   </div>
     </>
@@ -65,3 +67,4 @@ function Profile() {
 }
 
 export default Profile
+
