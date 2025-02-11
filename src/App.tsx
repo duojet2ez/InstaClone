@@ -7,21 +7,25 @@ import FollowedUser from './components/FollowedUser/FollowedUser.tsx'
 import SearchedUser from './components/SearchedUser/SearchedUser.tsx'
 import Profile from './components/Profile/Profile.tsx'
 import { useState } from 'react';
+import { BrowserRouter } from 'react-router'
 
 const loginStatus:boolean = true;
 function App() {
-    const [currentPage, setCurrentPage] = useState('login'); 
+    const [currentPage, setCurrentPage] = useState('profile'); 
   return (
-    <>
+    <BrowserRouter>
         <Header isLoggedIn = {loginStatus} />
         {/* {currentPage === 'registration' && <Registration setCurrentPage = {setCurrentPage} />} */}
         {/* {currentPage === 'login' && <Login setCurrentPage = {setCurrentPage}/>} */}
-        {/* <ActivityFeed /> */}
+        <ActivityFeed />
         {/* <CreatePost /> */}
         {/* <FollowedUser /> */}
         {/* <SearchedUser /> */}
-         {/* <Profile /> */}
-    </>
+         {/* {currentPage === 'profile' && <Profile 
+                                                profileUsername={"joe"}
+                                                loggedInUsername={"joe"}
+                                                />} */}
+    </BrowserRouter>
     )
 }
 
@@ -30,3 +34,6 @@ export default App
 
 
 // consider using enums for page checking
+
+
+//also use app to create new component that holds universal css settings for all pages and html
