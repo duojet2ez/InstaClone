@@ -7,12 +7,13 @@ import FollowedUser from './components/FollowedUser/FollowedUser.tsx'
 import SearchedUser from './components/SearchedUser/SearchedUser.tsx'
 import Profile from './components/Profile/Profile.tsx'
 import { useState } from 'react';
+import { BrowserRouter } from 'react-router'
 
 const loginStatus:boolean = true;
 function App() {
     const [currentPage, setCurrentPage] = useState('profile'); 
   return (
-    <>
+    <BrowserRouter>
         <Header isLoggedIn = {loginStatus} />
         {/* {currentPage === 'registration' && <Registration setCurrentPage = {setCurrentPage} />} */}
         {/* {currentPage === 'login' && <Login setCurrentPage = {setCurrentPage}/>} */}
@@ -24,7 +25,7 @@ function App() {
                                                 profileUsername={"joe"}
                                                 loggedInUsername={"joe"}
                                                 />} */}
-    </>
+    </BrowserRouter>
     )
 }
 
