@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Profile.css'
-import { getUserByUsername, Post } from '../../api/endpoints';
+import { getUserByUsername, Post, UserProfile } from '../../api/endpoints';
 
 
 
@@ -12,11 +12,20 @@ function PostItem(props:Post){
   )
 }
 
+function Private(){
+  return(
+    <>
+      <div className="privateMessage">This account is private</div>
+      <div className="privateMessage2">Follow this account to see their photos and videos</div>
+    </>
+  )
+}
 
 //probably should make individual states for User don't set object in state
 //why didn't make isLoggedInUsersProfile a state? think about that and try making it a state
 //login page stuff 
 function Profile({profileUsername, loggedInUsername}) {
+  const [user, setUser] = useState<UserProfile  | null | undefined>(undefined)
   const [username, setUsername] = useState(''); 
   const [followingCount, setFollowingCount] = useState(0); 
   const [followerCount, setFollowerCount] = useState(0); 
@@ -25,6 +34,7 @@ function Profile({profileUsername, loggedInUsername}) {
   useEffect(() =>{
     async function fetchData(){
       const user = await getUserByUsername(profileUsername);
+      setUser(user); 
       setUsername(user.username);
       setFollowingCount(user.followingCount);
       setFollowerCount(user.followerCount);
@@ -52,6 +62,8 @@ function Profile({profileUsername, loggedInUsername}) {
         </div>
     </div>
     <hr />
+    {user === null ? <Private /> : user === undefined ? 'error loading' : 
+    
     <div className="container">
       <div className="grid">
         {postData.map((p) => {
@@ -61,6 +73,8 @@ function Profile({profileUsername, loggedInUsername}) {
                     /> 
         })}
     </div>
+    }
+
   </div>
     </>
   )

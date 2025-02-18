@@ -1,6 +1,3 @@
- 
-
-
 const root = 'http://localhost:8000'
 
 export interface Post{
@@ -9,7 +6,7 @@ export interface Post{
   }
   
 
-interface UserProfile{
+export interface UserProfile{
     username:string;
     followingCount: number;
     followerCount: number;
@@ -17,12 +14,17 @@ interface UserProfile{
     posts:Post[]; 
 }
 
-
+//assuming if not followed user and click profile should return error code 403 forbidden also remember auth token for user logged in
 //function takes in a username and returns a json with username->folowers->post list etc 
-export async function getUserByUsername(username:string):Promise<UserProfile>{
+export async function getUserByUsername(username:string):Promise<UserProfile | null | undefined>{
     // const response = await fetch(`${root}/profile/:${username}`);
+    // if(response.status === 403){
+    //     console.log('error 403 forbidden');
+    //     return null;
+    // }
     // if(!response.ok){
     //     console.log('error fetching profile', response.status);
+    //     return undefined; 
     // }else{
     //     const res = await response.json();
     //     return res; 
