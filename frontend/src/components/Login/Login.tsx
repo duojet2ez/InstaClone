@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import './Login.css'
+import { Link, NavLink } from 'react-router';
 
-interface PageProps{
-    setCurrentPage: any;
-}
-export default function Login({setCurrentPage}: PageProps){
+
+export default function Login(){
     const [username, setUsername] = useState(''); 
     const [password, setPassword] = useState('');
     function handleLogin(){
-        //make a post request to node with the username and password for verification
+        //TODO make a post request to node with the username and password for verification
         console.log(`attempted username login: ${username}, attempted password: ${password}`);
+        
     }
     return(
         <>
@@ -37,9 +37,9 @@ export default function Login({setCurrentPage}: PageProps){
                     <br />
                     <br />
                     <button onClick = {handleLogin}>Log in</button>
-                    <button onClick = {() => {
-                        setCurrentPage('registration');
-                    }}>Sign Up</button>
+                    <Link to ="/register" >
+                        <button>Sign Up</button>
+                    </Link>
                 </div>
             </div>
         </>

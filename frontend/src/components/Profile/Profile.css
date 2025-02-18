@@ -24,6 +24,12 @@
     background-color: aqua;
 }
 
+.profileCircle img {
+     width: 100%; 
+     height: 100%; 
+    /* object-fit: cover; */
+  }
+
 .userName{
     display: flex;
     flex-direction: column;
@@ -79,4 +85,10 @@ hr {
     aspect-ratio: 1;
     background-color: #ddd;
     border: 1px solid #000;
+  }
+
+  .box img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
   }

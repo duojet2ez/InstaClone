@@ -2,11 +2,7 @@ import './Registration.css'
 
 
 
-interface PageProps{
-    setCurrentPage: any;
-}
-
-function Registration({setCurrentPage}: PageProps) {
+function Registration() {
     return (
         <div className="registration-container">
             <div className="registration-form">
@@ -35,7 +31,7 @@ function Registration({setCurrentPage}: PageProps) {
                 <br />
                 <button>Sign Up</button>
                 <button onClick ={() => {
-                    setCurrentPage('login'); 
+                    //to do  
                 }}>Log in</button>
 
             </div>
