@@ -72,10 +72,9 @@ function Profile({profileUsername, loggedInUsername}) {
                     id={p.id}
                     /> 
         })}
-    </div>
+      </div>
+      </div>
     }
-
-  </div>
     </>
   )
 }

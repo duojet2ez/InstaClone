@@ -28,12 +28,7 @@ function App() {
           <Route index element={<Login />}></Route>
           <Route path="feed" element={<ActivityFeed />}></Route>
           <Route path="createPost" element={<CreatePost />}></Route> 
-          <Route path="followedUser" element={<FollowedUser />}></Route> 
-          <Route path="searchedUser" element={<SearchedUser />}></Route> 
-          {/* {currentPage === 'profile' && <Profile 
-                                                  profileUsername={"joe"}
-                                                  loggedInUsername={"joe"}
-                                                  />} */}
+          <Route path="profile" element={<Profile profileUsername={"joe"} loggedInUsername={"joe"}/>}></Route>
       </Routes>
     </BrowserRouter>
     )
